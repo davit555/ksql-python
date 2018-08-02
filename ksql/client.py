@@ -57,11 +57,12 @@ class KSQLAPI(object):
                                      topic=topic,
                                      value_format=value_format)
 
-    def create_table(self, table_name, columns_type, topic, value_format):
+    def create_table(self, table_name, columns_type, topic, value_format, key):
         return self.sa.create_table(table_name=table_name,
                                     columns_type=columns_type,
                                     topic=topic,
-                                    value_format=value_format)
+                                    value_format=value_format,
+                                    key=key)
 
     def create_stream_as(
             self,
